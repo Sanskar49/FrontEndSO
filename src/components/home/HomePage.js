@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
+import AllQuestions from "../Questions/AllQuestions";
+import history from "../../history";
 const StyleHeader = styled.h1`
   font-size: 1.8rem;
 `;
@@ -25,6 +26,7 @@ const QuestionRow = styled.div`
   padding: 15px 15px;
   display: grid;
   grid-template-columns: repeat(3, 55px) 1fr;
+  border-top: 1px solid #555;
 `;
 
 const QuestionStat = styled.div`
@@ -62,22 +64,13 @@ function QuestionPage() {
     <main>
       <HeaderRow>
         <StyleHeader>Top Questions</StyleHeader>
-        <BlueButton>Ask&nbsp;Questions</BlueButton>
+        <form>
+          <BlueButton onClick={() => history.push("/questions/ask")}>
+            Ask&nbsp;Questions
+          </BlueButton>
+        </form>
       </HeaderRow>
-      <QuestionRow>
-        <QuestionStat>
-          0<span>votes</span>
-        </QuestionStat>
-        <QuestionStat>
-          1<span>answers</span>
-        </QuestionStat>
-        <QuestionStat>
-          6<span>views</span>
-        </QuestionStat>
-        <QuestionTitleArea>
-          <QuestionLink>Getting Strings in quotes in javascript</QuestionLink>
-        </QuestionTitleArea>
-      </QuestionRow>
+      <AllQuestions />
     </main>
   );
 }

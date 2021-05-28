@@ -5,7 +5,8 @@ import AllQuestions from "./components/Questions/AllQuestions";
 import styled, { createGlobalStyle } from "styled-components";
 import Header from "./components/home/Header";
 import HomePage from "./components/home/HomePage";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Router, Switch, Route } from "react-router-dom";
+import history from "./history";
 
 function App() {
   const GlobalStyles = createGlobalStyle` 
@@ -32,7 +33,7 @@ function App() {
   };
   return (
     <>
-      <Router>
+      <Router history={history}>
         <GlobalStyles />
         <Header />
         <Switch>

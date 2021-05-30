@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { faStackOverflow } from "@fortawesome/fontawesome-free-brands";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import history from "../../history";
 
 const StyleHeader = styled.header`
   background-color: #393939;
@@ -58,7 +59,7 @@ function Header() {
     <StyleHeader>
       <LogoLink href="" className="logo">
         <FontAwesomeIcon icon={faStackOverflow} size="2x" />
-        <span>
+        <span onClick={() => history.push("/")}>
           Question <b>&</b> Answer{" "}
         </span>
       </LogoLink>

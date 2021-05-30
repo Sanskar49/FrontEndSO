@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import history from "../../history";
 
 const AddQuestion = ({ onAdd }) => {
   const [questionTitle, setQuestiontitle] = useState("");
@@ -42,7 +43,12 @@ const AddQuestion = ({ onAdd }) => {
           value={question}
         />
       </div>
-      <input type="submit" className="btn btn-block" value="Add" />
+      <input
+        type="submit"
+        className="btn btn-block"
+        value="Add"
+        onClick={() => history.push("/question/id")}
+      />
     </form>
   );
 };

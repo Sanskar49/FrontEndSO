@@ -7,6 +7,7 @@ import Header from "./components/home/Header";
 import HomePage from "./components/home/HomePage";
 import { Router, Switch, Route } from "react-router-dom";
 import history from "./history";
+import Quest from "./components/Questions/Quest";
 
 function App() {
   const GlobalStyles = createGlobalStyle` 
@@ -43,6 +44,7 @@ function App() {
             exact
             component={() => <AddQuestion onAdd={addQuestion} />}
           />
+          <Route path="/question/id" exact component={Quest}></Route>
         </Switch>
       </Router>
     </>

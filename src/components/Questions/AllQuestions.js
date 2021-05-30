@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import history from "../../history";
 
 const QuestionRow = styled.div`
   background-color: rgba(255, 255, 255, 0.1);
@@ -31,6 +32,7 @@ const QuestionLink = styled.a`
   text-decoration: none;
   color: #3ca4ff;
   font-size: 1.3rem;
+  cursor: pointer;
 `;
 
 const When = styled.div`
@@ -80,7 +82,14 @@ const AllQuestions = () => {
             </QuestionStat>
             <QuestionTitleArea>
               <QuestionLink>
-                <div key={questiont.questionId}>{questiont.questionTitle}</div>
+                <div
+                  key={questiont.questionId}
+                  onClick={() =>
+                    history.push("/question/" + questiont.questionId)
+                  }
+                >
+                  {questiont.questionTitle}
+                </div>
               </QuestionLink>
               <When>asked on {questiont.timestamp}</When>
             </QuestionTitleArea>

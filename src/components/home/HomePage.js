@@ -2,8 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import AllQuestions from "../Questions/AllQuestions";
 import history from "../../history";
-const StyleHeader = styled.h1`
-  font-size: 1.8rem;
+import Header1 from "../Headersss/Header1";
+
+const HeaderRow = styled.div`
+  display: grid;
+  grid-template-columns: min-content;
+  padding: 30px 20px;
 `;
 
 const BlueButton = styled.button`
@@ -16,54 +20,11 @@ const BlueButton = styled.button`
   cursor: pointer;
 `;
 
-const HeaderRow = styled.div`
-  display: grid;
-  grid-template-columns: min-content;
-  padding: 30px 20px;
-`;
-const QuestionRow = styled.div`
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 15px 15px;
-  display: grid;
-  grid-template-columns: repeat(3, 55px) 1fr;
-  border-top: 1px solid #555;
-`;
-
-const QuestionStat = styled.div`
-  text-align: center;
-  display: inline-block;
-  font-size: 1.2rem;
-  color: #aaa;
-  span {
-    font-size: 0.7rem;
-    display: block;
-    font-weight: 300;
-    margin-top: 4px;
-  }
-`;
-
-const QuestionTitleArea = styled.div`
-  padding: 0 50px;
-`;
-
-const Tag = styled.span`
-  display: inline-block;
-  margin-right: 3px;
-  background-color: #3e4a52;
-  color: #9cc3db;
-`;
-
-const QuestionLink = styled.a`
-  text-decoration: none;
-  color: #3ca4ff;
-  font-size: 1.3rem;
-`;
-
 function QuestionPage() {
   return (
     <main>
       <HeaderRow>
-        <StyleHeader>Top Questions</StyleHeader>
+        <Header1>Top Questions</Header1>
         <form>
           <BlueButton onClick={() => history.push("/questions/ask")}>
             Ask&nbsp;Questions

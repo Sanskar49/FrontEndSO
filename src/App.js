@@ -5,9 +5,9 @@ import AllQuestions from "./components/Questions/AllQuestions";
 import styled, { createGlobalStyle } from "styled-components";
 import Header from "./components/home/Header";
 import HomePage from "./components/home/HomePage";
+import QuestionById from "./components/Questions/QuestionById";
 import { Router, Switch, Route } from "react-router-dom";
 import history from "./history";
-import Quest from "./components/Questions/Quest";
 
 function App() {
   const GlobalStyles = createGlobalStyle` 
@@ -18,7 +18,7 @@ function App() {
    }
       
 `;
-  const [questions, setQuestion] = useState([]);
+  const [questions, setQuestion] = useState("");
   const addQuestion = async (task) => {
     const res = await fetch("http://localhost:8080/question/create", {
       method: "POST",
@@ -45,7 +45,7 @@ function App() {
             exact
             component={() => <AddQuestion onAdd={addQuestion} />}
           />
-          <Route path="/question/id" exact component={Quest}></Route>
+          <Route path="/question/:questionId" exact component={QuestionById} />
         </Switch>
       </Router>
     </>

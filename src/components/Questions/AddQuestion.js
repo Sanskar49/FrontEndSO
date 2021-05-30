@@ -43,12 +43,7 @@ const AddQuestion = ({ onAdd }) => {
           value={question}
         />
       </div>
-      <input
-        type="submit"
-        className="btn btn-block"
-        value="Add"
-        onClick={() => history.push("/question/id")}
-      />
+      <input type="submit" className="btn btn-block" value="Add" />
     </form>
   );
 };

@@ -1,13 +1,14 @@
 import "./App.css";
 import { useState } from "react";
 import AddQuestion from "./components/Questions/AddQuestion";
-import AllQuestions from "./components/Questions/AllQuestions";
 import styled, { createGlobalStyle } from "styled-components";
 import Header from "./components/home/Header";
 import HomePage from "./components/home/HomePage";
 import QuestionById from "./components/Questions/QuestionById";
 import { Router, Switch, Route } from "react-router-dom";
 import history from "./history";
+import SearchQuestion from "./components/Questions/SearchedQuestion";
+import ErrorPage from "./components/Questions/ErrorPage";
 
 function App() {
   const GlobalStyles = createGlobalStyle` 
@@ -46,6 +47,8 @@ function App() {
             component={() => <AddQuestion onAdd={addQuestion} />}
           />
           <Route path="/question/:questionId" exact component={QuestionById} />
+          <Route path="/search/:data" exact component={SearchQuestion} />
+          <Route component={ErrorPage} />
         </Switch>
       </Router>
     </>

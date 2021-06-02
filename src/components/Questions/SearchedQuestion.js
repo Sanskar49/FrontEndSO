@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import history from "../../history";
 
@@ -39,30 +39,30 @@ const When = styled.div`
   display: inline-block;
 `;
 
-const AllQuestions = () => {
-  const [topic, setTopic] = useState([]);
+function SearchedQuestion(props) {
+  const [filteredquestion, setFilteredquestion] = useState([]);
 
   useEffect(() => {
-    loadData();
+    bringData();
   }, []);
 
-  const loadData = async () => {
-    const response = await fetch("http://localhost:8080/question/all", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+  const bringData = async () => {
+    const res = await fetch(
+      `http://localhost:8080/search/${props.match.params.data}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
-    const recieveddata = await response.json();
-
-    setTopic(recieveddata);
-    console.log(recieveddata);
+    const rdata = await res.json();
+    setFilteredquestion(rdata);
   };
-
   return (
     <div>
-      {topic.map((questiont) => {
+      {filteredquestion.map((questiont) => {
         return (
           <QuestionRow>
             <QuestionStat>
@@ -92,6 +92,6 @@ const AllQuestions = () => {
       })}
     </div>
   );
-};
+}
 
-export default AllQuestions;
+export default SearchedQuestion;

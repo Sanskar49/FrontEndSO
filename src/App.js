@@ -9,6 +9,7 @@ import { Router, Switch, Route } from "react-router-dom";
 import history from "./history";
 import SearchQuestion from "./components/Questions/SearchedQuestion";
 import ErrorPage from "./components/Questions/ErrorPage";
+import EditAddQuestion from "./components/Questions/EditAddQuestion";
 
 function App() {
   const GlobalStyles = createGlobalStyle` 
@@ -48,6 +49,11 @@ function App() {
           />
           <Route path="/question/:questionId" exact component={QuestionById} />
           <Route path="/search/:data" exact component={SearchQuestion} />
+          <Route
+            path="/question/edit/:questionId"
+            exact
+            component={EditAddQuestion}
+          />
           <Route component={ErrorPage} />
         </Switch>
       </Router>

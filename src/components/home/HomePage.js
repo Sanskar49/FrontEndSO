@@ -12,11 +12,11 @@ const HeaderRow = styled.div`
 
 const BlueButton = styled.button`
   background-color: #378ad3;
-  margin: -50px 0px 0px 1350px;
+  margin: -120px 0px 0px 1350px;
   color: #fff;
   border: 0;
-  border-radius: 5px;
-  padding: 8px 5px;
+  border-radius: 3px;
+  padding: 10px 10px;
   cursor: pointer;
 `;
 

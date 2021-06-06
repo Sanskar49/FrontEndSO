@@ -46,32 +46,19 @@ const GreenButton = styled.button`
 `;
 
 function EditAddQuestion(props) {
-  const [prequestionTitle, setPrequestionTitle] = useState("");
-  const [prequestion, setPrequestion] = useState("");
   const [postquestionTitle, setPostquestionTitle] = useState("");
   const [postquestion, setPostquestion] = useState("");
-
-  useEffect(async () => {
-    const response = await fetch(
-      "http://localhost:8080/question/" + props.match.params.questionId,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-    const recdata = await response.json();
-    setPrequestionTitle(recdata.questionTitle);
-    setPrequestion(recdata.question);
-  }, []);
 
   const editUser = async () => {
     const newdata = {
       questionTitle: postquestionTitle,
       question: postquestion,
     };
-    const editresponse = await fetch(
+    if (!postquestionTitle || !postquestion) {
+      alert("You have not edited anything");
+      return;
+    }
+    await fetch(
       "http://localhost:8080/question/edit/" + props.match.params.questionId,
       {
         method: "PUT",
@@ -81,9 +68,8 @@ function EditAddQuestion(props) {
         body: JSON.stringify(newdata),
       }
     );
-    const receditdata = await editresponse.json();
     alert("Your question has been edited.");
-    history.goBack("/question/" + props.match.params.questionId);
+    history.push("/question/" + props.match.params.questionId);
   };
 
   return (
@@ -93,18 +79,18 @@ function EditAddQuestion(props) {
         <label>Topic of the Question.</label>
         <QuestionTitleInput
           type="text"
-          //   value={prequestionTitle}
           onChange={(e) => {
             setPostquestionTitle(e.target.value);
           }}
+          // value={prequestionTitle}
         />
 
         <label>Please enter your question in a proper format.</label>
         <QuestionBodyTextArea
-          //   value={prequestion}
           onChange={(e) => {
             setPostquestion(e.target.value);
           }}
+          // value={prequestion}
         />
 
         <GreenButton>Save Edits</GreenButton>

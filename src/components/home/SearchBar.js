@@ -12,6 +12,16 @@ const SearchInput = styled.input`
   padding: 9px 6px;
   margin-top: 29px;
   color: #fff;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 80px;
+    margin-left: -350px;
+    width: 1150%;
+  }
+
+  @media screen and (max-width: 718px) {
+    min-width: max-content;
+  }
 `;
 function SearchBar() {
   const [data, setData] = useState("");
@@ -30,7 +40,6 @@ function SearchBar() {
         }}
         value={data}
       />
-      {/* <input type="submit" value="search" /> */}
     </form>
   );
 }

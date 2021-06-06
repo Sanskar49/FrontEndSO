@@ -3,6 +3,29 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import history from "../../history";
 
+const EditButton = styled.button`
+  background-color: #378ad3;
+
+  color: #fff;
+  cursor: pointer;
+
+  /* &::hover {
+    background-color: lightblue;
+    cursor: pointer;
+  } */
+`;
+const DeleteButton = styled.button`
+  background-color: #378ad3;
+
+  color: #fff;
+  cursor: pointer;
+
+  /* &::hover {
+    background-color: lightblue;
+    cursor: pointer;
+  } */
+`;
+
 function QuestionById(props) {
   const [qq, setQq] = useState({});
 
@@ -44,15 +67,16 @@ function QuestionById(props) {
     <div>
       <h1>{qq.questionTitle}</h1>
       <h3>{qq.question} </h3>
-      <button
+      <EditButton
         onClick={() => {
           history.push("/question/edit/" + qq.questionId);
         }}
       >
         Edit
-      </button>
+      </EditButton>
       <br />
-      <button onClick={deleteQuestion}>Delete</button>
+
+      <DeleteButton onClick={deleteQuestion}> Delete </DeleteButton>
     </div>
   );
 }

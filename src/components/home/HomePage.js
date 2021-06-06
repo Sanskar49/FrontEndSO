@@ -18,6 +18,17 @@ const BlueButton = styled.button`
   border-radius: 3px;
   padding: 10px 10px;
   cursor: pointer;
+
+  @media screen and (max-width: 1203px) {
+    margin: -120px 0px 0px 600px;
+  }
+  @media screen and (max-width: 500px) {
+    margin: -120px 0px 0px 0px;
+  }
+
+  &:hover {
+    background-color: #23395d;
+  }
 `;
 
 function QuestionPage() {

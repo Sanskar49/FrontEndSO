@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useState, useEffect } from "react";
 import { faStackOverflow } from "@fortawesome/fontawesome-free-brands";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import history from "../../history";
@@ -25,6 +24,9 @@ const LogoLink = styled.a`
     display: inline-block;
     margin-left: -10px;
   }
+  &:hover {
+    color: wheat;
+  }
 
   span {
     display: inline-block;
@@ -39,22 +41,11 @@ const LogoLink = styled.a`
   }
 `;
 
-const SearchInput = styled.input`
-  display: inline-block;
-  box-sizing: border-box;
-  width: 80%;
-  border: 1px solid #777;
-  border-radius: 3px;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 9px 6px;
-  margin-top: 29px;
-  color: #fff;
-`;
-
 const ProfileLink = styled.a`
   color: #fff;
   text-decoration: none;
-  line-height: 50px;
+  margin-top: 41px;
+  margin-left: -80px;
 `;
 
 function Header() {
@@ -69,9 +60,7 @@ function Header() {
         </LogoLink>
         <SearchBar />
 
-        <ProfileLink href="" className="profile">
-          Nikita
-        </ProfileLink>
+        <ProfileLink>Nikita</ProfileLink>
       </StyleHeader>
     </div>
   );

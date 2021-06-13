@@ -20,20 +20,14 @@ function App() {
    }
       
 `;
-  const [questions, setQuestion] = useState("");
   const addQuestion = async (task) => {
-    const res = await fetch("http://localhost:8080/question/create", {
+    await fetch("http://localhost:8080/question/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(task),
     });
-
-    const data = await res.json();
-    console.log(data);
-
-    setQuestion([...questions, data]);
   };
   return (
     <>
@@ -47,6 +41,7 @@ function App() {
             exact
             component={() => <AddQuestion onAdd={addQuestion} />}
           />
+
           <Route path="/question/:questionId" exact component={QuestionById} />
           <Route path="/search/:data" exact component={SearchQuestion} />
           <Route

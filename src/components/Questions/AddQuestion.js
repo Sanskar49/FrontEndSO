@@ -33,6 +33,7 @@ const QuestionBodyTextArea = styled.textarea`
   min-height: 200px;
   color: white;
   margin-bottom: 8px;
+  font-family: inherit;
 `;
 
 const BlueButton = styled.button`

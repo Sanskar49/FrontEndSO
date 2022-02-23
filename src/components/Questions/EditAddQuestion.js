@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import Header1 from "../Headersss/Header1";
 import history from "../../history";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   margin: 20px;
@@ -57,19 +58,20 @@ function EditAddQuestion(props) {
     if (!postquestionTitle || !postquestion) {
       alert("You have not edited anything");
       return;
+    } else {
+      await fetch(
+        "http://localhost:8080/question/edit/" + props.match.params.questionId,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(newdata),
+        }
+      );
+      alert("Your question has been edited");
+      <Link to="/home"></Link>;
     }
-    await fetch(
-      "http://localhost:8080/question/edit/" + props.match.params.questionId,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newdata),
-      }
-    );
-    alert("Your question has been edited.");
-    history.push("/question/" + props.match.params.questionId);
   };
 
   return (

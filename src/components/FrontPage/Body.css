@@ -1,0 +1,292 @@
+#spin {
+  color: rgb(126, 39, 65);
+}
+#spin:after {
+  content: "";
+  animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    content: "ask Questions";
+  }
+  33% {
+    content: "Give your answers";
+  }
+  66% {
+    content: "View Questions";
+  }
+  100% {
+    content: "Login & Signup";
+  }
+}
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 600;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"),
+    local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"),
+    local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: "system";
+}
+
+.container {
+  position: relative;
+  max-width: 640px;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 300;
+  height: 200px;
+  line-height: 200px;
+  margin: 20px auto;
+  border-radius: 6px;
+  color: rgb(8, 8, 8);
+  background-color: #a7fe1b;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.word {
+  font-size: 3em;
+  font-weight: bold;
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+.w1 {
+  -webkit-animation: w1anim 20s infinite;
+  animation: w1anim 20s infinite;
+}
+
+.w2 {
+  -webkit-animation: w2anim 20s infinite;
+  animation: w2anim 20s infinite;
+}
+
+.w3 {
+  -webkit-animation: w3anim 20s infinite;
+  animation: w3anim 20s infinite;
+}
+
+.w4 {
+  -webkit-animation: w4anim 20s infinite;
+  animation: w4anim 20s infinite;
+}
+
+.w5 {
+  -webkit-animation: w5anim 20s infinite;
+  animation: w5anim 20s infinite;
+}
+
+@-webkit-keyframes w1anim {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+}
+
+@keyframes w1anim {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes w2anim {
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+@keyframes w2anim {
+  20% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes w3anim {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
+@keyframes w3anim {
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes w4anim {
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+}
+
+@keyframes w4anim {
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes w5anim {
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes w5anim {
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  margin: 0px -5px;
+}
+
+.item {
+  box-sizing: border-box;
+  width: 25%;
+  margin-bottom: 20px;
+  padding: 0px 5px;
+}
+.outer {
+  background: rgb(255, 252, 252);
+  background: linear-gradient(
+    65deg,
+    rgba(255, 252, 252, 1) 0%,
+    rgba(125, 125, 125, 1) 49%,
+    rgba(255, 255, 255, 1) 99%
+  );
+  border-radius: 20px 20px 20px 20px;
+  height: 100%;
+  padding: 18px 5px 48px 5px;
+  width: 92%;
+  margin: 0 auto;
+}
+.content {
+  color: #242424;
+  background-color: #1bbefe;
+  font-weight: 600;
+  text-align: center;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0px 5px 200px 5px;
+  border: 5px none #1c6ea4;
+  border-radius: 40px 40px 40px 40px;
+  position: relative;
+  text-align: center;
+  height: 240px;
+  line-height: 200px;
+  margin: 20px auto;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+.loginbtn {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 0.8em;
+  color: #000;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  background-color: #87ceeb;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.15384615;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.signupbtn {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 0.8em;
+  color: #000;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  background-color: #61b33b;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.15384615;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}

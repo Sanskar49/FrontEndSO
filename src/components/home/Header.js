@@ -54,13 +54,13 @@ function Header() {
       <StyleHeader>
         <LogoLink href="" className="logo">
           <FontAwesomeIcon icon={faStackOverflow} size="2x" />
-          <span onClick={() => history.push("/")}>
+          <span onClick={() => history.push("/home")}>
             Question <b>&</b> Answer{" "}
           </span>
         </LogoLink>
         <SearchBar />
 
-        <ProfileLink>Nikita</ProfileLink>
+        {/* <ProfileLink>Nikita</ProfileLink> */}
       </StyleHeader>
     </div>
   );

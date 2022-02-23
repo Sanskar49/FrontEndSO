@@ -10,7 +10,7 @@ const SearchInput = styled.input`
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.1);
   padding: 9px 6px;
-  margin-top: 29px;
+  margin-top: 25px;
   color: #fff;
 
   @media screen and (max-width: 768px) {
@@ -20,6 +20,7 @@ const SearchInput = styled.input`
   }
 
   @media screen and (max-width: 718px) {
+    /* Pretty important Css I see */
     min-width: max-content;
   }
 `;
